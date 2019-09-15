@@ -51,7 +51,7 @@ public class OneEditAway {
 			boolean isOneEdit = oneEditAway(a, b);
 			System.out.println(a + ", " + b + ": " + isOneEdit);
 			System.out.println("bat : bats "+oneEditAway("bat", "bats"));
-			System.out.println("bat : tabs "+oneEditAway("bat", "tabs"));
+			System.out.println("pat : past "+oneEditAway("pat", "past"));
 			System.out.println("race : ace "+oneEditAway("race", "ace"));
 			System.out.println("mike : make "+oneEditAway("mike", "make"));
 		}
