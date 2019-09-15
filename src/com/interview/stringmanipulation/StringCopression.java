@@ -4,7 +4,8 @@ public class StringCopression {
 
 	public static void main(String[] args) {
 		String str = "aaaaaabbbcttzbbbppppBBB";
-		System.out.println("Compressed String : "+compress(str));
+		System.out.println("Compressed String 1 : "+compress(str));
+		System.out.println("Compressed String 2 : "+compressString(str));
 	}
 
 	private static String compress(String str) {
@@ -15,16 +16,32 @@ public class StringCopression {
 			if(str.charAt(i) == str.charAt(i+1)) {
 				count++;
 			}else {
-				compressedSb.append(count);
 				compressedSb.append(str.charAt(i));
+				compressedSb.append(count);
 				count = 1;
 			}
 			
 		}
-		compressedSb.append(count);
 		compressedSb.append(str.charAt(i));
+		compressedSb.append(count);
 		return compressedSb.toString();
 		
+	}
+	
+	public static String compressString(String str) {
+		StringBuilder compressed = new StringBuilder();
+		int countConsecutive = 0;
+		for (int i = 0; i < str.length(); i++) {
+			countConsecutive++;
+			
+			/* If next character is different than current, append this char to result.*/
+			if (i + 1 >= str.length() || str.charAt(i) != str.charAt(i + 1)) {
+				compressed.append(str.charAt(i));
+				compressed.append(countConsecutive);
+				countConsecutive = 0;
+			}
+		}
+		return compressed.length() < str.length() ? compressed.toString() : str;
 	}
 
 }
