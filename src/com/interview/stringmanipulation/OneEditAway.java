@@ -46,7 +46,7 @@ public class OneEditAway {
 		}
 		
 		public static void main(String[] args) {
-			String a = "pse";
+			String a = "pile";
 			String b = "pale";
 			boolean isOneEdit = oneEditAway(a, b);
 			System.out.println(a + ", " + b + ": " + isOneEdit);
